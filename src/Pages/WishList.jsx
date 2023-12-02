@@ -11,7 +11,7 @@ function WishList() {
   const dispatch = useDispatch()
   const handleWishlistCart = (product)=>{
     dispatch(addToCart(product))
-    dispatch(removeFromWishlist(product.id))
+    dispatch(removeFromWishlist(product._id))
   }
   return (
     <div style={{marginTop:'100px'}}>
@@ -21,18 +21,17 @@ function WishList() {
         wishlistArray.map((product,index)=>(
           <Col className="mb-5" sm={12} md={6} lg={4} xl={3}>
         <Card className="shadow rounded" style={{ width: "18rem", height:"30rem" }}>
-          <Card.Img height={'200px'} variant="top" src={product.thumbnail} />
+          <Card.Img height={'200px'} variant="top" src={product.picture} />
           <Card.Body>
-            <Card.Title>{product?.title}</Card.Title>
+            <Card.Title>{product?.name}</Card.Title>
             <Card.Text>
-              <p>{product?.description}</p>
               <h5>${product?.price}</h5>
             </Card.Text>
             <div className="d-flex justify-content-between">
-              <Button onClick={()=>dispatch(removeFromWishlist(product.id))} className="btn btn-light">
+              <Button onClick={()=>dispatch(removeFromWishlist(product._id))} className="btn btn-light">
                 <i className="fa-solid fa-trash text-danger fa-2x"></i>
               </Button>
-              <Button onClick={()=>handleWishlistCart} className="btn btn-light">
+              <Button onClick={()=>handleWishlistCart(product)} className="btn btn-light">
                 <i className="fa-solid fa-cart-plus text-success fa-2x"></i>
               </Button>
             </div>
