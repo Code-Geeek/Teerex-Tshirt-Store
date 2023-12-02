@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div
-      className="d-flex mt-5 justify-content-center align-items-center flex-column bg-primary"
+      className="d-flex  justify-content-center align-items-center flex-column bg-primary"
       style={{ width: "100%", height: "400px" }}
     >
       <div className="footer-content d-flex justify-content-evenly w-100 flex-wrap">

@@ -21,8 +21,7 @@ function Cart() {
   };
   const handleCart = () => {
     dispatch(emptyCart());
-    alert("Order successfully Placed...Thank you for shopping with us!")
-    navigate("/");
+    navigate("/order-success");
   };
   useEffect(() => {
     getCartTotal();
