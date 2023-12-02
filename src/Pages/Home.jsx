@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addToWishlist } from "./redux/slices/wishlistSlice";
 import { addToCart } from "./redux/slices/cartSlice";
 import axios from "axios";
+import ImageCarousel from "../Components/ImageCarousel";
 
 function Home() {
   const [data, setData] = useState([]);
@@ -31,6 +32,9 @@ function Home() {
 
   return (
     <div style={{ marginTop: "100px" }}>
+      <div className="imageSlider">
+        <ImageCarousel/>
+      </div>
       {/* Search bar */}
       <div className="d-flex justify-content-center mt-3 mb-4">
         <Form>
